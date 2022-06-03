@@ -1,0 +1,83 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.container{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(37, 37, 37);
+}
+
+.icon{
+    width:8rem;
+    height:4rem;
+    border:3px solid #949494;
+    border-radius: 37px;
+    padding: 0 1rem;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    animation: iconFrame 3s ease-in-out infinite;
+}
+.icon::before{
+    content:'';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top:10px solid #949494;
+    border-left:10px solid #949494;
+    border-right:10px solid transparent;
+    border-bottom:10px solid transparent;
+    bottom:-22px;
+    right:80px;
+}
+
+.icon .circles{
+    width:8px;
+    height:8px;
+    border-radius: 50%;
+    background-color: #949494;
+    transform: scale(1);
+}
+.icon .circles:nth-child(1){
+    animation: circlesFrame 1.5s ease-in-out infinite;
+    animation-delay: 0s;
+}
+.icon .circles:nth-child(2){
+    animation: circlesFrame 1.5s ease-in-out infinite;
+    animation-delay: 0.2;
+}
+.icon .circles:nth-child(3){
+    animation: circlesFrame 1.5s ease-in-out infinite;
+    animation-delay: 0.4s;
+}
+
+@keyframes iconFrame{
+    0%{
+        top:0px;
+    }
+    50%{
+        top:12px;
+    }
+    100%{
+        top:0px;
+    }
+
+}
+@keyframes circlesFrame{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
